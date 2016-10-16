@@ -69,6 +69,7 @@ class Trainer(object):
         while count < 100:
             tweet = next(cursor)
             words = [elem for elem in tweet.text.split()]
+            self.cleanse_words(words)
             for index in range(0, len(words) - 1):
                 result[words[index]][words[index + 1]] += 1
             count += 1
@@ -83,3 +84,7 @@ class Trainer(object):
                 data.write(tweet.text + '\n')
                 count += 1
 
+    def cleanse_words(self, word_list):
+        for index in range(0, len(word_list)):
+            if word_list[index] == "&amp;":
+                word_list[index] = "&"
