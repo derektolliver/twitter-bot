@@ -2,7 +2,8 @@ from enum import Enum
 import tweepy
 from trainer import Trainer
 import twitter_info
-import random, time
+import random
+import time
 
 
 class tweet_action(Enum):
@@ -33,5 +34,7 @@ while True:
 
     # Sleep before next tweet
     sleep_time = random.randint(60, 600)
-    print("time since last tweet:  " + time.ctime + ", sleep time: " + sleep_time + ", next tweet time: " time.ctime(time.time + sleep_time))
+    print("time since last tweet:  " + time.ctime() +
+          ", sleep time: " + str(sleep_time) + ", next tweet time: " +
+          time.ctime(time.time() + sleep_time))
     time.sleep(sleep_time)
