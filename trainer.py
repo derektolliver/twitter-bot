@@ -66,7 +66,7 @@ class Trainer(object):
         result = defaultdict(lambda: defaultdict(int))
         cursor = tweepy.Cursor(self.api.search, q="harambe").items()
         count = 0
-        while count < 100:
+        while count < 1000:
             tweet = next(cursor)
             words = [elem for elem in tweet.text.split()]
             self.cleanse_words(words)
