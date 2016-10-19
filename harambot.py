@@ -33,7 +33,7 @@ while True:
         api.update_status(t.tweet)
 
     # Sleep before next tweet
-    sleep_time = random.randint(60, 600)
+    sleep_time = random.randint(300, 900)
     print("time since last tweet:  " + time.ctime() +
           ", sleep time: " + str(sleep_time) + ", next tweet time: " +
           time.ctime(time.time() + sleep_time))
